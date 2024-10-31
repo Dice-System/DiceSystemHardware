@@ -18,7 +18,7 @@ create table usuarios(<br>
     nome varchar(45),<br>
     login varchar(45) unique,<br>
     email varchar(75) unique,<br>
-    tipo varchar(40),<br>
+    tipo varchar(40) default 'Estagiario',<br>
     senha varchar(80)<br>
 );<br>
 <br>

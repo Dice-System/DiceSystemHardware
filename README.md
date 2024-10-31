@@ -1,3 +1,18 @@
+# Introdução
+
+DiceSystem hardware é um sistema feito em java para registrar maquinas e peças, tal como suas manutenções, defeitos e soluções. O projeto
+é baseado totalmento nos laboratorios de informatica do colegio Ulbra São Lucaa
+
+# Funcionamento
+
+ao entrar na tela inicial voce tera as opções de logar, ou criar uma conta caso não tenha uma. <br>
+Todas as contas novas vem com o tipo de estagiario, pois para estar criando uma nova conta, voce certamente não é um admin.
+<br>
+Ao logar ou criar uma conta, voce automaticamente sera direcionado para a tela principal onde sera apresentado as funções principais, que são: <br>
+Lorem ipsum dolor sit amet,<br>
+consectetur adipiscing elit. <br>
+Etiam eget ligula eu lectus lobortis <br>
+
 # Banco de dados
 
 ## Modelo conceitual

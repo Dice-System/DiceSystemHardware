@@ -24,52 +24,55 @@ Etiam eget ligula eu lectus lobortis <br>
 
 ## Script do SQL para criação do banco de dados usado
 
-create database diceSystembd; <br>
-<br>
-use diceSystembd;<br>
-
-create table usuarios(<br>
-	id int auto_increment primary key,<br>
-    nome varchar(45),<br>
-    login varchar(45) unique,<br>
-    email varchar(75) unique,<br>
-    tipo varchar(40) default 'Estagiario',<br>
-    senha varchar(80)<br>
+CREATE TABLE usuarios ( <br>
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY, <br>
+    nome VARCHAR(100) NOT NULL, <br>
+    email VARCHAR(100) NOT NULL UNIQUE, <br>
+    senha VARCHAR(100) NOT NULL,<br>
+    login varchar (100) not null unique,<br>
+    perfil ENUM('tecnico', 'administrador', 'professor', 'estagiario') NOT NULL default 'estagiario'<br>
 );<br>
 <br>
-create table laboratorio(<br>
-	id int auto_increment primary key,<br>
-    nome varchar(45),<br>
-    quant_equip int default 0<br>
+CREATE TABLE laboratorios (<br>
+    id_laboratorio INT AUTO_INCREMENT PRIMARY KEY,<br>
+    nome VARCHAR(100) NOT NULL<br>
 );<br>
 <br>
-create table equipamento (<br>
-id int auto_increment primary key,<br>
-nome varchar(45),<br>
-tipo varchar(45),<br>
-descricao varchar(200),<br>
-id_laboratorio int,<br>
-<br>
-foreign key(id_laboratorio) references laboratorio(id)<br>
+CREATE TABLE equipamento (<br>
+    id_equipamento INT AUTO_INCREMENT PRIMARY KEY,<br>
+    id_laboratorio INT,<br>
+    nome VARCHAR(100) NOT NULL,<br>
+    processador VARCHAR(100),<br>
+    memoria_RAM VARCHAR(50),<br>
+    armazenamento VARCHAR(50),<br>
+    numero_serie VARCHAR(100) UNIQUE,<br>
+    data_aquisicao DATE,<br>
+    status ENUM('funcionando', 'em_manutencao', 'fora_de_uso') NOT NULL,<br>
+    FOREIGN KEY (id_laboratorio) REFERENCES laboratorios(id_laboratorio)<br>
 );<br>
 <br>
-create table peca<br>
-(<br>
-id int auto_increment primary key,<br>
-modelo varchar(45),<br>
-status_peca varchar(45),<br>
-descricao varchar(200),<br>
-id_equipamento int,<br>
-foreign key(id_equipamento) references equipamento(id)<br>
+CREATE TABLE manutencao (<br>
+    id_manutencao INT AUTO_INCREMENT PRIMARY KEY,<br>
+    id_equipamento INT,<br>
+    data_manutencao DATE NOT NULL,<br>
+    diagnostico TEXT,<br>
+    solucao TEXT,<br>
+    tecnico_responsavel VARCHAR(100),<br>
+    FOREIGN KEY (id_equipamento) REFERENCES equipamento(id_equipamento)<br>
 );<br>
 <br>
-create table manutencao(<br>
-id int auto_increment primary key,<br>
-data_entrada date,<br>
-data_saida date,<br>
-defeito varchar(115),<br>
-solucao varchar(115),<br>
-id_usuarios int,<br>
+CREATE TABLE pecas (<br>
+    id_peca INT AUTO_INCREMENT PRIMARY KEY,<br>
+    nome_peca VARCHAR(100) NOT NULL,<br>
+    quantidade_estoque INT DEFAULT 0,<br>
+    descricao TEXT<br>
+);<br>
 <br>
-foreign key(id_usuarios) references usuarios(id)<br>
-);
+CREATE TABLE pecas_manutencao (<br>
+    id_peca_manutencao INT AUTO_INCREMENT PRIMARY KEY,<br>
+    id_manutencao INT,<br>
+    id_peca INT,<br>
+    quantidade_utilizada INT NOT NULL default 0,<br>
+    FOREIGN KEY (id_manutencao) REFERENCES manutencao(id_manutencao),<br>
+    FOREIGN KEY (id_peca) REFERENCES pecas(id_peca)<br>
+);<br>

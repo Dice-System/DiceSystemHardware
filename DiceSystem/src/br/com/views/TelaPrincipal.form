@@ -72,16 +72,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="op&#xe7;&#xf5;es"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu2ActionPerformed"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+                <Property name="text" type="java.lang.String" value="sair"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem2"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -114,9 +115,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="desktop" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
               <Component id="lblTipo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -125,7 +126,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTipo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="490" max="32767" attributes="0"/>
+              <EmptySpace pref="562" max="32767" attributes="0"/>
           </Group>
           <Component id="desktop" alignment="0" max="32767" attributes="0"/>
       </Group>
@@ -137,7 +138,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="699" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="988" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

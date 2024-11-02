@@ -7,11 +7,13 @@
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DAO/ManutencaoDAO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DAO/ConexaoDAO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DAO/LaboratorioDAO.java</file>
+            <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DTO/PecaManutencaoDTO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DTO/UsuariosDTO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/views/TelaUsuarios.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DAO/UsuariosDAO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DAO/EquipamentoDAO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DAO/PecaDAO.java</file>
+            <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/test/teste.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/views/TelaPrincipal.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DTO/LaboratorioDTO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DTO/EquipamentoDTO.java</file>
@@ -19,6 +21,7 @@
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DTO/PecaDTO.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/views/TelaCriarConta.java</file>
             <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/DTO/ManutencaoDTO.java</file>
+            <file>file:/C:/Users/Leon/Documents/NetBeansProjects/DiceSystem/src/br/com/views/TelaMaquinas.java</file>
         </group>
     </open-files>
 </project-private>

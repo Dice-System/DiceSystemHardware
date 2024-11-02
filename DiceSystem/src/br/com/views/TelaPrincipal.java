@@ -39,7 +39,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -48,7 +47,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 699, Short.MAX_VALUE)
+            .addGap(0, 988, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,12 +95,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("opções");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.setText("sair");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem1);
-
-        jMenuItem2.setText("jMenuItem2");
-        jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
 
@@ -113,16 +119,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(lblTipo)
-                .addContainerGap())
+                .addGap(115, 115, 115))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTipo)
-                .addContainerGap(490, Short.MAX_VALUE))
+                .addContainerGap(562, Short.MAX_VALUE))
             .addComponent(desktop)
         );
 
@@ -131,7 +137,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+        TelaMaquinas maq = new TelaMaquinas();
+        maq.setVisible(true);
+        desktop.add(maq);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
@@ -143,6 +151,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         usu.setVisible(true);
         desktop.add(usu);
     }//GEN-LAST:event_btnEdUsuActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        TelaInicial ini = new TelaInicial();
+        ini.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,7 +204,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     public static javax.swing.JMenuItem jMenuItem4;
     public static javax.swing.JMenuItem jMenuItem5;
     public static javax.swing.JMenuItem jMenuItem6;

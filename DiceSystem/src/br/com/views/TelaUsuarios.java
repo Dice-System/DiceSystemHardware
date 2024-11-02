@@ -58,9 +58,10 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
 
         jButton5.setText("jButton5");
 
-        setMaximumSize(new java.awt.Dimension(549, 530));
-        setMinimumSize(new java.awt.Dimension(549, 530));
-        setPreferredSize(new java.awt.Dimension(699, 530));
+        setClosable(true);
+        setMaximumSize(new java.awt.Dimension(988, 623));
+        setMinimumSize(new java.awt.Dimension(988, 623));
+        setPreferredSize(new java.awt.Dimension(988, 623));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setText("Edição de usuarios");
@@ -149,7 +150,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(124, 124, 124)
                 .addComponent(jLabel1)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(453, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -216,7 +217,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         pack();

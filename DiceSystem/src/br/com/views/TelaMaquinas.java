@@ -74,7 +74,7 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "id da maquina", "id do laboratorio", "laboratorio", "nome", "processador", "memoria  RAM", "armazenamento", " N.º de serie", "data de aquisição", "Status"
+                "id da maquina", "id do laboratorio", "laboratorio", "nome", "processador", "memoria  RAM", "armazenamento", " N.º de serie", "data aquisição", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {

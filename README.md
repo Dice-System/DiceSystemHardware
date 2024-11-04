@@ -24,6 +24,10 @@ Etiam eget ligula eu lectus lobortis <br>
 
 ## Script do SQL para criação do banco de dados usado
 
+Create database DiceSytemBD <br>
+<br>
+use DiceSytemBD <br>
+<br>
 CREATE TABLE usuarios ( <br>
     id_usuario INT AUTO_INCREMENT PRIMARY KEY, <br>
     nome VARCHAR(100) NOT NULL, <br>

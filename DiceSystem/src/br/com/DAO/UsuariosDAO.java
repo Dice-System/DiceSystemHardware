@@ -41,7 +41,7 @@ public class UsuariosDAO {
                 JOptionPane.showMessageDialog(null, "Conta criada");
                 TelaPrincipal pri = new TelaPrincipal();
                 pri.setVisible(true);
-                TelaPrincipal.lblTipo.setText("Estagiario");
+                TelaPrincipal.lblTipo.setText("Perfil: Estagiario");
                 TelaPrincipal.btnEdUsu.setEnabled(false);
                 return 1;
             } else {
@@ -80,13 +80,13 @@ public class UsuariosDAO {
                 TelaPrincipal pri = new TelaPrincipal();
                 pri.setVisible(true);
                 if (rs.getString(6).contains("estagiario")) {
-                    TelaPrincipal.lblTipo.setText("Estagiario");
+                    TelaPrincipal.lblTipo.setText("Pefil: Estagiario");
                     TelaPrincipal.btnEdUsu.setEnabled(false);
                 } else if (rs.getString(6).contains("tecnico")) {
-                    TelaPrincipal.lblTipo.setText("Técnico");
+                    TelaPrincipal.lblTipo.setText("Pefil: Técnico");
                     TelaPrincipal.btnEdUsu.setEnabled(false);
                 } else if (rs.getString(6).contains("professor")) {
-                    TelaPrincipal.lblTipo.setText("Professor");
+                    TelaPrincipal.lblTipo.setText("Pefil: Professor");
                     TelaPrincipal.btnEdUsu.setEnabled(false);
                 }
                 return 1;

@@ -195,7 +195,7 @@
                 <Column editable="false" title="memoria  RAM" type="java.lang.Object"/>
                 <Column editable="false" title="armazenamento" type="java.lang.Object"/>
                 <Column editable="false" title=" N.&#xba; de serie" type="java.lang.Object"/>
-                <Column editable="false" title="data de aquisi&#xe7;&#xe3;o" type="java.lang.Object"/>
+                <Column editable="false" title="data aquisi&#xe7;&#xe3;o" type="java.lang.Object"/>
                 <Column editable="false" title="Status" type="java.lang.Object"/>
               </Table>
             </Property>

@@ -22,6 +22,7 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
         initComponents();
         EquipamentoDAO dao = new EquipamentoDAO();
         dao.autoPesquisar();
+        dao.verificartipo();
     }
 
     /**
@@ -65,10 +66,13 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(988, 623));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel1.setText("Gerenciamento de maquinas");
+        jLabel1.setForeground(new java.awt.Color(255, 49, 0));
+        jLabel1.setText("Inventario");
 
+        tbMaq.setBackground(new java.awt.Color(41, 37, 71));
         tbMaq.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tbMaq.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        tbMaq.setForeground(new java.awt.Color(255, 49, 0));
         tbMaq.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null}
@@ -78,7 +82,7 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -86,6 +90,27 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tbMaq);
+
+        txtId.setBackground(new java.awt.Color(41, 37, 71));
+        txtId.setForeground(new java.awt.Color(255, 49, 0));
+
+        txtIdLabin.setBackground(new java.awt.Color(41, 37, 71));
+        txtIdLabin.setForeground(new java.awt.Color(255, 49, 0));
+
+        txtNome.setBackground(new java.awt.Color(41, 37, 71));
+        txtNome.setForeground(new java.awt.Color(255, 49, 0));
+
+        txtProcess.setBackground(new java.awt.Color(41, 37, 71));
+        txtProcess.setForeground(new java.awt.Color(255, 49, 0));
+
+        txtRam.setBackground(new java.awt.Color(41, 37, 71));
+        txtRam.setForeground(new java.awt.Color(255, 49, 0));
+
+        txtArmz.setBackground(new java.awt.Color(41, 37, 71));
+        txtArmz.setForeground(new java.awt.Color(255, 49, 0));
+
+        txtNSerie.setBackground(new java.awt.Color(41, 37, 71));
+        txtNSerie.setForeground(new java.awt.Color(255, 49, 0));
 
         jLabel2.setText("id");
 
@@ -105,6 +130,8 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
 
         jLabel10.setText("status");
 
+        boxStatus.setBackground(new java.awt.Color(41, 37, 71));
+        boxStatus.setForeground(new java.awt.Color(255, 49, 0));
         boxStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "funcionando", "em manutenção", "fora de uso" }));
         boxStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,28 +139,35 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCria.setText("criar");
+        txtDataAq.setBackground(new java.awt.Color(41, 37, 71));
+        txtDataAq.setForeground(new java.awt.Color(255, 49, 0));
+
+        btnCria.setBackground(new java.awt.Color(41, 37, 71));
+        btnCria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         btnCria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCriaActionPerformed(evt);
             }
         });
 
-        btnEditar.setText("editar");
+        btnEditar.setBackground(new java.awt.Color(41, 37, 71));
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
 
-        btnDeletar.setText("deletar");
+        btnDeletar.setBackground(new java.awt.Color(41, 37, 71));
+        btnDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/remove.png"))); // NOI18N
         btnDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletarActionPerformed(evt);
             }
         });
 
-        btnPesquisar.setText("pesquisar");
+        btnPesquisar.setBackground(new java.awt.Color(41, 37, 71));
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesquisarActionPerformed(evt);
@@ -144,6 +178,18 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(310, 310, 310)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel2)
+                .addGap(231, 231, 231)
+                .addComponent(jLabel8)
+                .addGap(153, 153, 153)
+                .addComponent(jLabel4)
+                .addGap(194, 194, 194)
+                .addComponent(jLabel6))
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,37 +219,25 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
                 .addComponent(boxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabel7))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(txtArmz, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(txtArmz, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addComponent(btnCria)
-                .addGap(27, 27, 27)
-                .addComponent(btnPesquisar)
-                .addGap(31, 31, 31)
+                .addGap(23, 23, 23)
+                .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(btnEditar)
-                .addGap(29, 29, 29)
+                .addGap(33, 33, 33)
                 .addComponent(btnDeletar))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 972, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(231, 231, 231)
-                        .addComponent(jLabel8)
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel4)
-                        .addGap(194, 194, 194)
-                        .addComponent(jLabel6))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
@@ -237,16 +271,20 @@ public class TelaMaquinas extends javax.swing.JInternalFrame {
                     .addComponent(txtProcess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
-                .addComponent(jLabel7)
-                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtArmz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCria)
-                    .addComponent(btnPesquisar)
-                    .addComponent(btnEditar)
-                    .addComponent(btnDeletar))
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtArmz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCria)
+                            .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditar)
+                            .addComponent(btnDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(67, 67, 67)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();

@@ -2,6 +2,7 @@ package br.com.DAO;
 
 import br.com.DTO.EquipamentoDTO;
 import br.com.views.TelaMaquinas;
+import br.com.views.TelaPrincipal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -245,4 +246,18 @@ public class EquipamentoDAO {
         }
 
     }
+    
+    public void verificartipo(){
+        if(TelaPrincipal.lblTipo.getText().contains("Estagiario")){
+            TelaMaquinas.btnCria.setEnabled(false);
+            TelaMaquinas.btnDeletar.setEnabled(false);
+            TelaMaquinas.btnEditar.setEnabled(false);
+            TelaMaquinas.btnPesquisar.setEnabled(false);
+        } else if(TelaPrincipal.lblTipo.getText().contains("Professor")){
+            TelaMaquinas.btnCria.setEnabled(false);
+            TelaMaquinas.btnDeletar.setEnabled(false);
+            TelaMaquinas.btnEditar.setEnabled(false);
+        }
+    }
+    
 }

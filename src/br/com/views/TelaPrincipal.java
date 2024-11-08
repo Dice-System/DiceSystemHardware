@@ -47,7 +47,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -104,7 +103,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(btnEdUsu);
 
-        jMenuItem4.setText("cadastro de maquinas");
+        jMenuItem4.setText("inventario");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -121,6 +120,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem5);
 
         jMenuItem8.setText("solicitação de manutenção");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem8);
 
         jMenuItem6.setText("gerenciamento de manutenção");
@@ -130,14 +134,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem6);
-
-        jMenuItem7.setText("peças e inventario");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem7);
 
         jMenuBar1.add(jMenu1);
 
@@ -185,12 +181,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktop.add(maq);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        TelaPecaInventario pi = new TelaPecaInventario();
-        pi.setVisible(true);
-        desktop.add(pi);
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
-
     private void btnEdUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdUsuActionPerformed
         TelaUsuarios usu = new TelaUsuarios();
         usu.setVisible(true);
@@ -198,7 +188,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEdUsuActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-        
+
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -214,10 +204,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        TelaManutencao manu = new TelaManutencao();
+        TelaGerenciaManutencao manu = new TelaGerenciaManutencao();
         manu.setVisible(true);
         desktop.add(manu);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        TelaSolicitaManutencao manu = new TelaSolicitaManutencao();
+        manu.setVisible(true);
+        desktop.add(manu);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,7 +260,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenuItem jMenuItem4;
     public static javax.swing.JMenuItem jMenuItem5;
     public static javax.swing.JMenuItem jMenuItem6;
-    public static javax.swing.JMenuItem jMenuItem7;
     public static javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel lblTipo;

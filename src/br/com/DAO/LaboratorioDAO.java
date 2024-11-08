@@ -2,7 +2,7 @@ package br.com.DAO;
 
 import br.com.DTO.LaboratorioDTO;
 import br.com.views.TelaLaboratorio;
-import br.com.views.TelaMaquinas;
+import br.com.views.TelaPrincipal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -80,52 +80,100 @@ public class LaboratorioDAO {
             pst = conexao.prepareStatement(sql);
             pst.setInt(1, dto.getId());
             pst.setInt(2, dto.getId());
-            
+
             rs = pst.executeQuery();
-            
+
             DefaultTableModel model = (DefaultTableModel) TelaLaboratorio.tbLabin.getModel();
             model.setNumRows(0);
-                
-                
-                while (rs.next()) {
-                    TelaLaboratorio.txtNome.setText(rs.getString("lab"));
+
+            while (rs.next()) {
+                TelaLaboratorio.txtNome.setText(rs.getString("lab"));
                 int id = rs.getInt("id_lab");
                 String lab = rs.getString("lab");
                 String status = rs.getString("status");
                 String equip = rs.getString("equip");
 
                 model.addRow(new Object[]{id, lab, equip, status});
-            
+
             }
-            
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Método pesquisar" + e.getMessage());
         }
     }
-    public void deletar(LaboratorioDTO dto){
-        String sql = "delete from laboratorios where id_laboratorio = ?";
-        conexao = ConexaoDAO.connector();
-        
-        try {
-            pst = conexao.prepareStatement(sql);
-            pst.setInt(1, dto.getId());
-            int add = pst.executeUpdate();
-            if(add > 0){
-                JOptionPane.showMessageDialog(null, "Deletado com sucesso");
-                autoPesquisar();
-                limpar();
-            }else{
-                JOptionPane.showMessageDialog(null, "Laboratorio não cadastrado");
-                limpar();
+
+    public void deletar(LaboratorioDTO dto) {
+        int res = JOptionPane.showConfirmDialog(null, "Quer mesmo deletar este labin?", null, JOptionPane.YES_NO_OPTION);
+        if (res == JOptionPane.YES_OPTION) {
+            String sql = "delete from laboratorios where id_laboratorio = ?";
+            conexao = ConexaoDAO.connector();
+
+            try {
+                pst = conexao.prepareStatement(sql);
+                pst.setInt(1, dto.getId());
+                int add = pst.executeUpdate();
+                if (add > 0) {
+                    JOptionPane.showMessageDialog(null, "Deletado com sucesso");
+                    autoPesquisar();
+                    limpar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Laboratorio não cadastrado");
+                    limpar();
+                }
+            } catch (Exception e) {
+                if (e.getMessage().contains("Cannot delete or update a parent row: a foreign key constraint fails")) {
+                    JOptionPane.showMessageDialog(null, "laboratorio não pode ser deletado, há equipamentos registrados ainda");
+                } else {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                }
+
             }
-        } catch (Exception e) {
-            if (e.getMessage().contains("Cannot delete or update a parent row: a foreign key constraint fails")){
-                JOptionPane.showMessageDialog(null, "laboratorio não pode ser deletado, há equipamentos registrados ainda");
-            } else {
-                JOptionPane.showMessageDialog(null, e.getMessage());
-            }
-            
         }
     }
+
+    public void editar(LaboratorioDTO dto) {
+        int res = JOptionPane.showConfirmDialog(null, "Quer mesmo editar este labin?", null, JOptionPane.YES_NO_OPTION);
+        if (res == JOptionPane.YES_OPTION) {
+            String sql = "update laboratorios set nome = ? where id_laboratorio = ?";
+            conexao = ConexaoDAO.connector();
+
+            try {
+                pst = conexao.prepareStatement(sql);
+
+                pst.setInt(2, dto.getId());
+                pst.setString(1, dto.getNome());
+
+                int add = pst.executeUpdate();
+                if (add > 0) {
+                    JOptionPane.showMessageDialog(null, "Atualizado com sucesso");
+                    limpar();
+                    autoPesquisar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Laboratorio não registrado");
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro método editar: " + e.getMessage());
+            }
+        }
+    }
+    
+    public void verificarTipo(){
+        if (TelaPrincipal.lblTipo.getText().contains("Estagiario")){
+            TelaLaboratorio.btnAdd.setEnabled(false);
+            TelaLaboratorio.btnEd.setEnabled(false);
+            TelaLaboratorio.btnExcluir.setEnabled(false);
+            TelaLaboratorio.btnPesq.setEnabled(false);
+        } else if (TelaPrincipal.lblTipo.getText().contains("Técnico")){
+            TelaLaboratorio.btnAdd.setEnabled(false);
+            TelaLaboratorio.btnEd.setEnabled(false);
+            TelaLaboratorio.btnExcluir.setEnabled(false);
+        } else if (TelaPrincipal.lblTipo.getText().contains("Professor")){
+            TelaLaboratorio.btnAdd.setEnabled(false);
+            TelaLaboratorio.btnEd.setEnabled(false);
+            TelaLaboratorio.btnExcluir.setEnabled(false);
+            TelaLaboratorio.btnPesq.setEnabled(false);
+        }
+        
+    }
+    
 }

@@ -22,6 +22,7 @@ public class TelaLaboratorio extends javax.swing.JInternalFrame {
         initComponents();
         LaboratorioDAO dao = new LaboratorioDAO();
         dao.autoPesquisar();
+        dao.verificarTipo();
     }
 
     /**
@@ -33,25 +34,45 @@ public class TelaLaboratorio extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        btnEd = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbLabin = new javax.swing.JTable();
         txtId = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         btnPesq = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
-        btnEd = new javax.swing.JButton();
-        btnExcluir = new javax.swing.JButton();
 
         setClosable(true);
         setMaximumSize(new java.awt.Dimension(988, 623));
         setMinimumSize(new java.awt.Dimension(988, 623));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel1.setText("Gerenciamento de laboratórios");
+        btnEd.setBackground(new java.awt.Color(41, 37, 71));
+        btnEd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        btnEd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEdActionPerformed(evt);
+            }
+        });
 
+        btnExcluir.setBackground(new java.awt.Color(41, 37, 71));
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/remove.png"))); // NOI18N
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 49, 0));
+        jLabel2.setText("Gerenciamento de laboratórios");
+
+        tbLabin.setBackground(new java.awt.Color(41, 37, 71));
+        tbLabin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tbLabin.setForeground(new java.awt.Color(255, 49, 0));
         tbLabin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -70,36 +91,34 @@ public class TelaLaboratorio extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbLabin);
 
+        txtId.setBackground(new java.awt.Color(41, 37, 71));
+        txtId.setForeground(new java.awt.Color(255, 49, 0));
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Id");
+        txtNome.setBackground(new java.awt.Color(41, 37, 71));
+        txtNome.setForeground(new java.awt.Color(255, 49, 0));
 
-        jLabel3.setText("Nome");
+        jLabel3.setText("Id");
 
-        btnPesq.setText("Pesquisar");
+        jLabel4.setText("Nome");
+
+        btnPesq.setBackground(new java.awt.Color(41, 37, 71));
+        btnPesq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
         btnPesq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPesqActionPerformed(evt);
             }
         });
 
-        btnAdd.setText("Adicionar");
+        btnAdd.setBackground(new java.awt.Color(41, 37, 71));
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
-            }
-        });
-
-        btnEd.setText("Editar");
-
-        btnExcluir.setText("Excluir");
-        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirActionPerformed(evt);
             }
         });
 
@@ -108,60 +127,94 @@ public class TelaLaboratorio extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(49, 49, 49)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnPesq)
-                                    .addComponent(btnAdd))
-                                .addGap(43, 43, 43)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                                    .addComponent(txtNome)))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnExcluir)
-                                    .addComponent(btnEd))))))
-                .addContainerGap(172, Short.MAX_VALUE))
+                                    .addComponent(btnAdd)
+                                    .addComponent(btnPesq))
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnEd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(btnAdd)
-                    .addComponent(btnEd))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(btnPesq)
-                    .addComponent(btnExcluir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(208, 208, 208))
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAdd)
+                            .addComponent(btnEd))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnPesq)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        if (txtId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Escolha o Id de um laboratorio para Deletar");
+        } else {
+            LaboratorioDTO dto = new LaboratorioDTO();
+            LaboratorioDAO dao = new LaboratorioDAO();
+
+            int id = Integer.parseInt(txtId.getText());
+
+            dto.setId(id);
+
+            dao.deletar(dto);
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
+
+    private void btnPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesqActionPerformed
+        if (txtId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Escolha o Id de um laboratorio para pesquisar");
+        } else {
+            LaboratorioDTO dto = new LaboratorioDTO();
+            LaboratorioDAO dao = new LaboratorioDAO();
+
+            int id = Integer.parseInt(txtId.getText());
+
+            dto.setId(id);
+
+            dao.pesquisar(dto);
+        }
+    }//GEN-LAST:event_btnPesqActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         if (txtId.getText().isEmpty()) {
@@ -182,45 +235,35 @@ public class TelaLaboratorio extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void btnPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesqActionPerformed
+    private void btnEdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdActionPerformed
         if (txtId.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Escolha o Id de um laboratorio para pesquisar");
+            JOptionPane.showMessageDialog(null, "Selecione um Id para editar");
+        } else if (txtNome.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Campo de Nome vazio");
         } else {
             LaboratorioDTO dto = new LaboratorioDTO();
             LaboratorioDAO dao = new LaboratorioDAO();
+            
 
             int id = Integer.parseInt(txtId.getText());
+            String nome = txtNome.getText();
 
             dto.setId(id);
+            dto.setNome(nome);
 
-            dao.pesquisar(dto);
+            dao.editar(dto);
         }
-    }//GEN-LAST:event_btnPesqActionPerformed
-
-    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-          if (txtId.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Escolha o Id de um laboratorio para Deletar");
-        } else {
-            LaboratorioDTO dto = new LaboratorioDTO();
-            LaboratorioDAO dao = new LaboratorioDAO();
-
-            int id = Integer.parseInt(txtId.getText());
-
-            dto.setId(id);
-
-            dao.deletar(dto);
-        }
-    }//GEN-LAST:event_btnExcluirActionPerformed
+    }//GEN-LAST:event_btnEdActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnEd;
-    private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnPesq;
-    private javax.swing.JLabel jLabel1;
+    public static javax.swing.JButton btnAdd;
+    public static javax.swing.JButton btnEd;
+    public static javax.swing.JButton btnExcluir;
+    public static javax.swing.JButton btnPesq;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JTable tbLabin;
     public static javax.swing.JTextField txtId;

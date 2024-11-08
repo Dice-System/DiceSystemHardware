@@ -16,7 +16,7 @@ public class ConexaoDAO {
 
         String user = "root";
 
-        String password = "root";
+        String password = "080108";
 
         try {
             Class.forName(driver);

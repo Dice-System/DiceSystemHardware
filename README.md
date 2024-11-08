@@ -63,20 +63,4 @@ CREATE TABLE manutencao (<br>
     solucao TEXT,<br>
     tecnico_responsavel VARCHAR(100),<br>
     FOREIGN KEY (id_equipamento) REFERENCES equipamento(id_equipamento)<br>
-);<br>
-<br>
-CREATE TABLE pecas (<br>
-    id_peca INT AUTO_INCREMENT PRIMARY KEY,<br>
-    nome_peca VARCHAR(100) NOT NULL,<br>
-    quantidade_estoque INT DEFAULT 0,<br>
-    descricao TEXT<br>
-);<br>
-<br>
-CREATE TABLE pecas_manutencao (<br>
-    id_peca_manutencao INT AUTO_INCREMENT PRIMARY KEY,<br>
-    id_manutencao INT,<br>
-    id_peca INT,<br>
-    quantidade_utilizada INT NOT NULL default 0,<br>
-    FOREIGN KEY (id_manutencao) REFERENCES manutencao(id_manutencao),<br>
-    FOREIGN KEY (id_peca) REFERENCES pecas(id_peca)<br>
-);<br>
+);
